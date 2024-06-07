@@ -1,6 +1,7 @@
 package linggash.spring.core;
 
 import linggash.spring.core.data.Connection;
+import linggash.spring.core.data.Server;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,4 +28,8 @@ public class LifeCycleTest {
         Connection connection = applicationContext.getBean(Connection.class);
     }
 
+    @Test
+    void testServer() {
+        Server server = applicationContext.getBean(Server.class);
+    }
 }

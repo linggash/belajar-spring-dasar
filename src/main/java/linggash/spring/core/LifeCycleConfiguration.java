@@ -1,6 +1,7 @@
 package linggash.spring.core;
 
 import linggash.spring.core.data.Connection;
+import linggash.spring.core.data.Server;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,6 +11,11 @@ public class LifeCycleConfiguration {
     @Bean
     public Connection connection() {
         return new Connection();
+    }
+
+    @Bean(initMethod = "start", destroyMethod = "stop")
+    public Server server() {
+        return new Server();
     }
 
 }

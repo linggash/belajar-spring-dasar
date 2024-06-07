@@ -1,8 +1,8 @@
 package linggash.spring.core;
 
-import linggash.spring.core.cyclic.CyclicA;
-import linggash.spring.core.cyclic.CyclicB;
-import linggash.spring.core.cyclic.CyclicC;
+import linggash.spring.core.data.cyclic.CyclicA;
+import linggash.spring.core.data.cyclic.CyclicB;
+import linggash.spring.core.data.cyclic.CyclicC;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

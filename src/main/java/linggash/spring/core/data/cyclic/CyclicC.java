@@ -1,4 +1,4 @@
-package linggash.spring.core.cyclic;
+package linggash.spring.core.data.cyclic;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

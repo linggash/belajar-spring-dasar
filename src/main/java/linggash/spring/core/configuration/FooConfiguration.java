@@ -1,4 +1,4 @@
-package linggash.spring.core;
+package linggash.spring.core.configuration;
 
 import linggash.spring.core.data.Foo;
 import org.springframework.context.annotation.Bean;

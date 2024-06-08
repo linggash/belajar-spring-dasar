@@ -13,7 +13,11 @@ public class LifeCycleConfiguration {
         return new Connection();
     }
 
-    @Bean(initMethod = "start", destroyMethod = "stop")
+    // saat sudah menggunakan annotation @PostConstruct atau @PreDestroy
+    // maka tidak perlu lagi untuk menggunakan initMethod dan destroyMethod
+
+//    @Bean(initMethod = "start", destroyMethod = "stop")
+    @Bean
     public Server server() {
         return new Server();
     }

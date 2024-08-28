@@ -13,24 +13,27 @@ import java.util.UUID;
 BeanPostProcessor digunakan saat kita ingin memodifikasi bean
 saat selesai diproses dan kita bisa memodifikasinya sebelum dan
 sesudah initialization
+
+Ordered digunakan saat kita ingin mengurutkan BeanPostProcessor.
+Semakin kecil angkanya maka akan dieksekusi terlebih dahulu.
 */
 
 @Slf4j
 @Component
-public class IdGeneratorBeanPostProcessor implements BeanPostProcessor, Ordered {
+public class PrefixIdGeneratorBeanPostProcessor implements BeanPostProcessor, Ordered {
 
     @Override
     public int getOrder() {
-        return 1;
+        return 2;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        log.info("Id Generator Processor for Bean {}", bean);
+        log.info("Prefix Id Generator Processor for Bean {}", bean);
         if (bean instanceof IdAware) {
-            log.info("Set Id Generator for Bean {}", beanName);
+            log.info("Set Prefix Id Generator for Bean {}", beanName);
             IdAware idAware = (IdAware) bean;
-            idAware.setId(UUID.randomUUID().toString());
+            idAware.setId("Prefix- " + idAware.getId());
         }
 
         return bean;

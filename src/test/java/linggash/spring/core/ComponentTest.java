@@ -11,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.util.Assert;
 
 public class ComponentTest {
 
@@ -54,6 +53,18 @@ public class ComponentTest {
         CustomerService customerService = applicationContext.getBean(CustomerService.class);
         CustomerRepository customerRepository = applicationContext.getBean(CustomerRepository.class);
 
-        Assertions.assertSame(customerService.getCustomerRepository(), customerRepository);
+        // ini dibuat memilih normal karena itu adalah bean yg lebih dulu diambil
+        Assertions.assertSame(customerService.getNormalCustomerRepository(), customerRepository);
+    }
+
+    @Test
+    void testQualifiers() {
+        CustomerService customerService = applicationContext.getBean(CustomerService.class);
+
+        CustomerRepository normalCustomerRepository = applicationContext.getBean("normalCustomerRepository", CustomerRepository.class);
+        CustomerRepository premiumCustomerRepository = applicationContext.getBean("premiumCustomerRepository", CustomerRepository.class);
+
+        Assertions.assertSame(customerService.getNormalCustomerRepository(), normalCustomerRepository);
+        Assertions.assertSame(customerService.getPremiumCustomerRepository(), premiumCustomerRepository);
     }
 }

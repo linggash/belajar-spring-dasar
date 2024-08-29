@@ -2,6 +2,7 @@ package linggash.spring.core;
 
 import linggash.spring.core.listener.LoginAgainSuccessListener;
 import linggash.spring.core.listener.LoginSuccessListener;
+import linggash.spring.core.listener.UserListener;
 import linggash.spring.core.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,8 @@ public class EventListenerTest {
     @Import({
             UserService.class,
             LoginSuccessListener.class,
-            LoginAgainSuccessListener.class
+            LoginAgainSuccessListener.class,
+            UserListener.class
     })
     public static class TestConfiguration {
 

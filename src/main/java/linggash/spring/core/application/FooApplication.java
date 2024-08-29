@@ -1,5 +1,6 @@
 package linggash.spring.core.application;
 
+import linggash.spring.core.data.Bar;
 import linggash.spring.core.data.Foo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +18,7 @@ public class FooApplication {
     }
 
     @Bean
-    public Foo foo() {
+    public Foo foo(Bar bar) {
         return new Foo();
     }
 

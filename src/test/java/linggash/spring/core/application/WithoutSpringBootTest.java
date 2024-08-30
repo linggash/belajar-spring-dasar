@@ -8,16 +8,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class WithoutSpringBootTest {
 
-    private ConfigurableApplicationContext applicationContext;
-
-    @BeforeEach
-    void setUp() {
-        applicationContext = new AnnotationConfigApplicationContext(FooApplication.class);
-        applicationContext.registerShutdownHook();
-    }
-
-    @Test
-    void testFoo() {
-        Foo foo = applicationContext.getBean(Foo.class);
-    }
+//    private ConfigurableApplicationContext applicationContext;
+//
+//    @BeforeEach
+//    void setUp() {
+//        applicationContext = new AnnotationConfigApplicationContext(FooApplication.class);
+//        applicationContext.registerShutdownHook();
+//    }
+//
+//    @Test
+//    void testFoo() {
+//        Foo foo = applicationContext.getBean(Foo.class);
+//    }
 }

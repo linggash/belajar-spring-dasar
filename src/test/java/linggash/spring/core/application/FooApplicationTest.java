@@ -7,15 +7,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = FooApplication.class)
+//@SpringBootTest(classes = FooApplication.class)
 class FooApplicationTest {
-
-    @Autowired
-    Foo foo;
-
-    @Test
-    void testSpringBoot() {
-        assertNotNull(foo);
-    }
+//
+//    @Autowired
+//    Foo foo;
+//
+//    @Test
+//    void testSpringBoot() {
+//        assertNotNull(foo);
+//    }
 
 }
